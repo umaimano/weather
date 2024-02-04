@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0%;
+    font-family: 'Lexend Deca', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(30,152,157,1) 10%, rgba(7,54,99,1) 100%);
+
+
+}
+
+.card {
+    width: 500px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(195,255,242,1) 0%, rgba(56,203,255,1) 100%);
+    background-blend-mode: normal, normal, screen, overlay, normal;
+    box-shadow: 0px 0px 10px 1px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+
+}
+.searchBox{
+    padding: 20px;
+    height: 50px;
+    outline: 0px;
+    border: 0px;
+    border-radius: 20px;
+}
+   
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather{
+   margin-top: 5%; 
+}
+.searchbtn{
+    padding: 15px;
+    height: 53px;
+    outline: 0px;
+    border: 0px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+
+}
+.details{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 10px;
+   align-items: center; 
+}

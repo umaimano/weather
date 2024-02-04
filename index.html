@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="searchBox" placeholder="Enter your city name">
+            <button class="searchbtn"><img src="./search_3031293.png" alt="" height="20px" width="20px"></button>
+        </div>
+
+        <div class="weather">
+            <img class="weathericon" src="./cloudy_1146869 (1).png" alt="" width="100px" height="100px">
+            <h1 class="temp">22°C</h1>
+            <h1 class="city">Monopoly</h1>
+        </div>
+        <div class="details">
+            <div class="col">
+                <img src="./condensation_5454066 (1).png" alt="" height="50px" width="50px">
+                <p class="humidity">50%</p>
+                <p>Humidity</p>
+            </div>
+
+            <div class="col">
+                <img src="./wind_5825932 (1).png" alt="" height="50px" width="50px">
+                <p class="wind">15 km\h</p>
+                <p>Wind</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let apiKey = "24ed9c16cd883ffeae5ff9afc360053f"
+        let apiUrl  = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
+        let searchBox = document.querySelector(".searchBox")
+    
+
+   async function checkWeather(city){
+
+    let response = await fetch(apiUrl + city + `&appid=${apiKey}`)
+    let data = await response.json()
+    console.log(data);
+
+    document.querySelector('.city').innerText=data.name;
+    document.querySelector('.temp').innerText=data.main.temp;
+    document.querySelector('.humidity').innerText = data.main.humidity;
+    document.querySelector('.wind').innerText =Math.round(data.wind.speed);
+   }
+
+   document.querySelector(".searchbtn").addEventListener('click',()=>{
+    checkWeather(searchBox.value)
+   })
+  
+
+
+
+    </script>
+
+</body>
+
+</html>
